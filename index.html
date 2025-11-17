@@ -7,6 +7,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Анимированные желтые точки фона -->
+    <div class="dots-background" aria-hidden="true">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="dotsPattern" x="0" y="0" width="150" height="150" patternUnits="userSpaceOnUse">
+                    <circle cx="10" cy="10" r="2" fill="#D4FF00" opacity="0.8">
+                        <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="75" cy="45" r="2" fill="#D4FF00" opacity="0.7">
+                        <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="130" cy="80" r="3" fill="#D4FF00" opacity="0.6">
+                        <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="50" cy="120" r="1.5" fill="#D4FF00" opacity="0.8">
+                        <animate attributeName="opacity" values="0.6;0.95;0.6" dur="2.8s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="100" cy="100" r="2.5" fill="#D4FF00" opacity="0.7">
+                        <animate attributeName="opacity" values="0.5;1;0.5" dur="3.2s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="140" cy="30" r="2" fill="#D4FF00" opacity="0.75">
+                        <animate attributeName="opacity" values="0.6;0.9;0.6" dur="3.8s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="25" cy="70" r="1.5" fill="#D4FF00" opacity="0.65">
+                        <animate attributeName="opacity" values="0.5;0.85;0.5" dur="2.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="110" cy="25" r="2" fill="#D4FF00" opacity="0.7">
+                        <animate attributeName="opacity" values="0.6;0.95;0.6" dur="4.2s" repeatCount="indefinite"/>
+                    </circle>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dotsPattern)"/>
+        </svg>
+    </div>
+    
     <!-- Шапка сайта -->
     <header class="header">
         <div class="container">
@@ -22,10 +57,117 @@
 
     <!-- Главный баннер -->
     <section class="hero">
+        <div class="hero-decorative-blocks" aria-hidden="true">
+            <!-- Розовый декоративный блок -->
+            <svg class="pink-block-svg" width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="0,0 400,0 340,300 0,300" fill="#FF0080" opacity="0.15">
+                    <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="translate"
+                        values="0,0; 20,-20; 0,0"
+                        dur="8s"
+                        repeatCount="indefinite"/>
+                </polygon>
+                <!-- Дополнительный слой для глубины -->
+                <polygon points="20,20 380,20 330,280 20,280" fill="#FF0080" opacity="0.08">
+                    <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="translate"
+                        values="0,0; -10,10; 0,0"
+                        dur="10s"
+                        repeatCount="indefinite"/>
+                </polygon>
+            </svg>
+            
+            <!-- Серый декоративный блок -->
+            <svg class="gray-block-svg" width="350" height="250" viewBox="0 0 350 250" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="50,0 350,0 350,250 0,250" fill="#AFAFAF" opacity="0.1">
+                    <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="translate"
+                        values="0,0; -15,15; 0,0"
+                        dur="10s"
+                        repeatCount="indefinite"/>
+                </polygon>
+                <!-- Дополнительный слой для глубины -->
+                <polygon points="60,10 340,10 340,240 10,240" fill="#AFAFAF" opacity="0.05">
+                    <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="translate"
+                        values="0,0; 10,-10; 0,0"
+                        dur="12s"
+                        repeatCount="indefinite"/>
+                </polygon>
+            </svg>
+        </div>
         <div class="container">
             <div class="hero-content">
+                <!-- SVG Пиксельная иконка мозга/AI -->
+                <svg class="ai-brain-icon" width="120" height="120" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Пиксельный мозг -->
+                    <rect x="8" y="3" width="2" height="2" fill="#FF0080"/>
+                    <rect x="10" y="3" width="2" height="2" fill="#FF0080"/>
+                    <rect x="12" y="3" width="2" height="2" fill="#FF0080"/>
+                    <rect x="14" y="3" width="2" height="2" fill="#FF0080"/>
+                    
+                    <rect x="6" y="5" width="2" height="2" fill="#FF0080"/>
+                    <rect x="8" y="5" width="2" height="2" fill="#FF0080"/>
+                    <rect x="10" y="5" width="2" height="2" fill="#FF1090"/>
+                    <rect x="12" y="5" width="2" height="2" fill="#FF1090"/>
+                    <rect x="14" y="5" width="2" height="2" fill="#FF0080"/>
+                    <rect x="16" y="5" width="2" height="2" fill="#FF0080"/>
+                    
+                    <rect x="4" y="7" width="2" height="2" fill="#FF0080"/>
+                    <rect x="6" y="7" width="2" height="2" fill="#FF1090"/>
+                    <rect x="8" y="7" width="2" height="2" fill="#FF2099"/>
+                    <rect x="10" y="7" width="2" height="2" fill="#FF2099"/>
+                    <rect x="12" y="7" width="2" height="2" fill="#FF2099"/>
+                    <rect x="14" y="7" width="2" height="2" fill="#FF2099"/>
+                    <rect x="16" y="7" width="2" height="2" fill="#FF1090"/>
+                    <rect x="18" y="7" width="2" height="2" fill="#FF0080"/>
+                    
+                    <rect x="4" y="9" width="2" height="2" fill="#FF0080"/>
+                    <rect x="6" y="9" width="2" height="2" fill="#FF2099"/>
+                    <rect x="8" y="9" width="2" height="2" fill="#FF30AA"/>
+                    <rect x="10" y="9" width="2" height="2" fill="#D4FF00"/>
+                    <rect x="12" y="9" width="2" height="2" fill="#D4FF00"/>
+                    <rect x="14" y="9" width="2" height="2" fill="#FF30AA"/>
+                    <rect x="16" y="9" width="2" height="2" fill="#FF2099"/>
+                    <rect x="18" y="9" width="2" height="2" fill="#FF0080"/>
+                    
+                    <rect x="4" y="11" width="2" height="2" fill="#FF0080"/>
+                    <rect x="6" y="11" width="2" height="2" fill="#FF2099"/>
+                    <rect x="8" y="11" width="2" height="2" fill="#FF30AA"/>
+                    <rect x="10" y="11" width="2" height="2" fill="#FF30AA"/>
+                    <rect x="12" y="11" width="2" height="2" fill="#FF30AA"/>
+                    <rect x="14" y="11" width="2" height="2" fill="#FF30AA"/>
+                    <rect x="16" y="11" width="2" height="2" fill="#FF2099"/>
+                    <rect x="18" y="11" width="2" height="2" fill="#FF0080"/>
+                    
+                    <rect x="6" y="13" width="2" height="2" fill="#FF0080"/>
+                    <rect x="8" y="13" width="2" height="2" fill="#FF1090"/>
+                    <rect x="10" y="13" width="2" height="2" fill="#FF2099"/>
+                    <rect x="12" y="13" width="2" height="2" fill="#FF2099"/>
+                    <rect x="14" y="13" width="2" height="2" fill="#FF1090"/>
+                    <rect x="16" y="13" width="2" height="2" fill="#FF0080"/>
+                    
+                    <rect x="8" y="15" width="2" height="2" fill="#FF0080"/>
+                    <rect x="10" y="15" width="2" height="2" fill="#FF0080"/>
+                    <rect x="12" y="15" width="2" height="2" fill="#FF0080"/>
+                    <rect x="14" y="15" width="2" height="2" fill="#FF0080"/>
+                    
+                    <!-- Анимация пульсации -->
+                    <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                </svg>
+                
+                <div class="hero-date animate-fade-in">22 ноября 2025</div>
                 <h2 class="hero-title animate-fade-in">Кейсы хакатона 2025</h2>
                 <p class="hero-subtitle animate-fade-in-delay">9 уникальных кейсов от 7 ведущих кейсодержателей</p>
+                <p class="hero-location animate-fade-in-delay">ИТ-парк им. Башира Рамеева</p>
                 <div class="hero-stats animate-slide-up">
                     <div class="stat-item">
                         <div class="stat-number">9</div>
@@ -267,7 +409,6 @@
                 <div class="cases-grid">
                     <!-- Кейс 3 -->
                     <div class="case-card">
-                        <div class="case-badge badge-inprogress">🔄 В работе</div>
                         <div class="case-number">03</div>
                         <div class="case-icon">⚙️</div>
                         <h4 class="case-title">Система автоматической обработки заявок клиентов</h4>
@@ -367,7 +508,6 @@
                 <div class="cases-grid">
                     <!-- Кейс 4 -->
                     <div class="case-card">
-                        <div class="case-badge badge-inprogress">🔄 В работе</div>
                         <div class="case-number">04</div>
                         <div class="case-icon">🔍</div>
                         <h4 class="case-title">ИИ-агент для определения плагиата в учебных проектах</h4>
@@ -481,7 +621,6 @@
                 <div class="cases-grid">
                     <!-- Кейс 5 -->
                     <div class="case-card">
-                        <div class="case-badge badge-inprogress">🔄 В работе</div>
                         <div class="case-number">05</div>
                         <div class="case-icon">🏃</div>
                         <h4 class="case-title">ИИ-агент для повышения вовлеченности в фитнес-приложении</h4>
