@@ -33,41 +33,6 @@ body {
     min-height: 100vh;
 }
 
-/* Анимированные желтые точки фона */
-.dots-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
-    animation: dotsFloat 20s ease-in-out infinite;
-}
-
-.dots-background svg {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-@keyframes dotsFloat {
-    0%, 100% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(10px, -10px);
-    }
-    50% {
-        transform: translate(-5px, 10px);
-    }
-    75% {
-        transform: translate(-10px, -5px);
-    }
-}
 
 .container {
     max-width: 1200px;
@@ -81,7 +46,7 @@ body {
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
     padding: 20px 0;
 }
 
@@ -191,20 +156,26 @@ body {
     z-index: 2;
 }
 
-/* SVG Пиксельная иконка мозга/AI */
-.ai-brain-icon {
+/* SVG Пиксельный робот AI агент */
+.ai-robot-icon {
     display: block;
     margin: 0 auto 30px;
-    filter: drop-shadow(0 0 20px rgba(255, 0, 128, 0.4));
-    animation: brainFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 25px rgba(255, 0, 128, 0.5)) drop-shadow(0 0 15px rgba(212, 255, 0, 0.3));
+    animation: robotFloat 3s ease-in-out infinite;
 }
 
-@keyframes brainFloat {
+@keyframes robotFloat {
     0%, 100% {
-        transform: translateY(0) scale(1);
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-8px) scale(1.03) rotate(-1deg);
     }
     50% {
-        transform: translateY(-10px) scale(1.05);
+        transform: translateY(-12px) scale(1.05) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-8px) scale(1.03) rotate(1deg);
     }
 }
 
@@ -274,7 +245,7 @@ body {
 .stat-number::before {
     content: '/';
     position: absolute;
-    left: -25px;
+    left: -30px;
     color: var(--accent-color);
     opacity: 0.4;
     font-size: 48px;
@@ -283,7 +254,7 @@ body {
 .stat-number::after {
     content: '/';
     position: absolute;
-    right: -25px;
+    right: -30px;
     color: var(--accent-color);
     opacity: 0.4;
     font-size: 48px;
@@ -358,24 +329,20 @@ body {
 
 .section-title::before {
     content: '{';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-200px);
     color: var(--accent-color);
     font-size: 72px;
     opacity: 0.3;
-    top: -10px;
+    margin-right: 15px;
+    display: inline;
 }
 
 .section-title::after {
     content: '}';
-    position: absolute;
-    right: 50%;
-    transform: translateX(200px);
     color: var(--accent-color);
     font-size: 72px;
     opacity: 0.3;
-    top: -10px;
+    margin-left: 15px;
+    display: inline;
 }
 
 /* Кейсы */
@@ -625,30 +592,12 @@ body {
     overflow: hidden;
 }
 
-.accordion-toggle::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -50%);
-    transition: width 0.4s ease, height 0.4s ease;
-}
-
-.accordion-toggle:hover::before {
-    width: 300px;
-    height: 300px;
-}
-
 .accordion-toggle:hover {
     background: var(--primary-bg);
     color: var(--accent-color);
     border: 3px solid var(--accent-color);
-    transform: scale(1.02);
-    box-shadow: 0 5px 20px rgba(212, 255, 0, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(212, 255, 0, 0.5);
 }
 
 .accordion-content {
@@ -974,7 +923,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .ai-brain-icon {
+    .ai-robot-icon {
         width: 80px;
         height: 80px;
         margin-bottom: 20px;
@@ -996,11 +945,14 @@ body {
         font-size: 48px;
     }
 
-    .stat-number::before,
+    .stat-number::before {
+        font-size: 28px;
+        left: -20px;
+    }
+    
     .stat-number::after {
-        font-size: 32px;
-        left: -15px;
-        right: -15px;
+        font-size: 28px;
+        right: -20px;
     }
 
     .logo::before,
@@ -1070,12 +1022,7 @@ body {
         display: none;
     }
 
-    /* Упрощаем точки фона на мобильных */
-    .dots-background {
-        opacity: 0.4;
-    }
-
-    /* Убираем clip-path на малых экранах для лучшей читаемости */
+/* Убираем clip-path на малых экранах для лучшей читаемости */
     .case-card {
         clip-path: none;
         border-radius: 8px;
@@ -1093,7 +1040,7 @@ body {
 }
 
 @media (max-width: 480px) {
-    .ai-brain-icon {
+    .ai-robot-icon {
         width: 60px;
         height: 60px;
         margin-bottom: 15px;
@@ -1115,6 +1062,11 @@ body {
     .hero-stats {
         flex-direction: column;
         gap: 30px;
+    }
+    
+    .stat-number::before,
+    .stat-number::after {
+        display: none;
     }
 
     .header-content {
@@ -1169,17 +1121,7 @@ body {
         font-size: 14px;
     }
 
-    /* Минимальные точки фона на маленьких экранах */
-    .dots-background {
-        opacity: 0.3;
-    }
-
-    /* Упрощаем анимации на слабых устройствах */
-    .dots-background {
-        animation: none;
-    }
-
-    .hero-decorative-blocks .pink-block-svg,
+.hero-decorative-blocks .pink-block-svg,
     .hero-decorative-blocks .gray-block-svg {
         animation: none;
     }
@@ -1226,8 +1168,7 @@ body {
 .btn,
 .accordion-toggle,
 .nav-link,
-.hero-decorative-blocks,
-.dots-background {
+.hero-decorative-blocks {
     will-change: transform;
 }
 
