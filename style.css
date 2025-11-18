@@ -378,7 +378,16 @@ body {
 }
 
 .partner-icon {
-    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    display: block;
+    filter: drop-shadow(0 0 10px rgba(212, 255, 0, 0.3));
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.partner-icon:hover {
+    filter: drop-shadow(0 0 20px rgba(212, 255, 0, 0.5));
+    transform: scale(1.1);
 }
 
 .partner-title {
@@ -512,9 +521,17 @@ body {
 }
 
 .case-icon {
-    font-size: 56px;
+    width: 56px;
+    height: 56px;
     margin-bottom: 20px;
     display: block;
+    filter: drop-shadow(0 0 15px rgba(255, 0, 128, 0.3));
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.case-card:hover .case-icon {
+    filter: drop-shadow(0 0 25px rgba(255, 0, 128, 0.5));
+    transform: scale(1.05);
 }
 
 .case-title {
@@ -723,8 +740,17 @@ body {
 }
 
 .partner-icon-large {
-    font-size: 72px;
-    margin-bottom: 25px;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 25px;
+    display: block;
+    filter: drop-shadow(0 0 20px rgba(212, 255, 0, 0.3));
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.partner-card:hover .partner-icon-large {
+    filter: drop-shadow(0 0 30px rgba(212, 255, 0, 0.5));
+    transform: scale(1.1) translateY(-5px);
 }
 
 .partner-card h4 {
