@@ -12,7 +12,6 @@
     --accent-color: #D4FF00;
     --accent-orange: #FF6B00;
     --pink-accent: #FF0080;
-    --gray-block: #AFAFAF;
     --text-white: #FFFFFF;
     --text-gray: #B0B0B0;
     --border-color: #333333;
@@ -28,11 +27,8 @@ body {
     color: var(--text-white);
     background: var(--primary-bg);
     overflow-x: hidden;
-    overflow-y: auto;
-    position: relative;
     min-height: 100vh;
 }
-
 
 .container {
     max-width: 1200px;
@@ -62,21 +58,18 @@ body {
     color: var(--text-white);
     text-transform: uppercase;
     letter-spacing: 2px;
-    position: relative;
 }
 
 .logo::before {
     content: '{';
     color: var(--accent-color);
     margin-right: 8px;
-    font-weight: 900;
 }
 
 .logo::after {
     content: '}';
     color: var(--accent-color);
     margin-left: 8px;
-    font-weight: 900;
 }
 
 .nav {
@@ -118,65 +111,12 @@ body {
     background: var(--primary-bg);
     position: relative;
     z-index: 1;
-    overflow: hidden;
-}
-
-/* Декоративные блоки в hero */
-.hero-decorative-blocks {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.hero-decorative-blocks .pink-block-svg {
-    position: absolute;
-    top: 10%;
-    right: 5%;
-    max-width: 400px;
-    height: auto;
-}
-
-.hero-decorative-blocks .gray-block-svg {
-    position: absolute;
-    bottom: 15%;
-    left: 8%;
-    max-width: 350px;
-    height: auto;
 }
 
 .hero-content {
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
-    position: relative;
-    z-index: 2;
-}
-
-/* SVG Пиксельный робот AI агент */
-.ai-robot-icon {
-    display: block;
-    margin: 0 auto 30px;
-    filter: drop-shadow(0 0 25px rgba(255, 0, 128, 0.5)) drop-shadow(0 0 15px rgba(212, 255, 0, 0.3));
-    animation: robotFloat 3s ease-in-out infinite;
-}
-
-@keyframes robotFloat {
-    0%, 100% {
-        transform: translateY(0) scale(1) rotate(0deg);
-    }
-    25% {
-        transform: translateY(-8px) scale(1.03) rotate(-1deg);
-    }
-    50% {
-        transform: translateY(-12px) scale(1.05) rotate(0deg);
-    }
-    75% {
-        transform: translateY(-8px) scale(1.03) rotate(1deg);
-    }
 }
 
 .hero-title {
@@ -193,8 +133,6 @@ body {
     font-size: 20px;
     color: var(--text-gray);
     margin-bottom: 20px;
-    font-weight: 400;
-    position: relative;
 }
 
 .hero-date {
@@ -210,7 +148,6 @@ body {
     font-size: 16px;
     color: var(--text-gray);
     margin-bottom: 60px;
-    font-weight: 400;
 }
 
 .hero-location::before,
@@ -218,7 +155,6 @@ body {
     content: '/';
     color: var(--accent-color);
     margin: 0 10px;
-    font-weight: 700;
 }
 
 .hero-stats {
@@ -238,7 +174,6 @@ body {
     color: var(--accent-color);
     margin-bottom: 5px;
     line-height: 1;
-    position: relative;
     text-shadow: 0 0 30px rgba(212, 255, 0, 0.3);
 }
 
@@ -249,6 +184,7 @@ body {
     color: var(--accent-color);
     opacity: 0.4;
     font-size: 48px;
+    margin-left: -30px;
 }
 
 .stat-number::after {
@@ -258,6 +194,7 @@ body {
     color: var(--accent-color);
     opacity: 0.4;
     font-size: 48px;
+    margin-right: -30px;
 }
 
 .stat-label {
@@ -281,7 +218,6 @@ body {
     letter-spacing: 1px;
     transition: all 0.3s ease;
     border: 3px solid transparent;
-    position: relative;
 }
 
 .btn-primary {
@@ -294,23 +230,8 @@ body {
 .btn-primary:hover {
     background: var(--primary-bg);
     color: var(--accent-color);
-    border: 3px solid var(--accent-color);
     transform: scale(1.05);
     box-shadow: 0 0 40px rgba(212, 255, 0, 0.5);
-}
-
-.btn-outline {
-    background: transparent;
-    color: var(--pink-accent);
-    border: 3px solid var(--pink-accent);
-}
-
-.btn-outline:hover {
-    background: var(--pink-accent);
-    color: var(--text-white);
-    border: 3px solid var(--pink-accent);
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(255, 0, 128, 0.4);
 }
 
 /* Секции */
@@ -322,7 +243,6 @@ body {
     color: var(--text-white);
     text-transform: uppercase;
     letter-spacing: -1px;
-    position: relative;
     display: inline-block;
     width: 100%;
 }
@@ -333,7 +253,6 @@ body {
     font-size: 72px;
     opacity: 0.3;
     margin-right: 15px;
-    display: inline;
 }
 
 .section-title::after {
@@ -342,7 +261,6 @@ body {
     font-size: 72px;
     opacity: 0.3;
     margin-left: 15px;
-    display: inline;
 }
 
 /* Кейсы */
@@ -364,7 +282,6 @@ body {
     margin-bottom: 50px;
     padding-bottom: 20px;
     border-bottom: 3px solid var(--pink-accent);
-    position: relative;
 }
 
 .partner-header::after {
@@ -378,16 +295,9 @@ body {
 }
 
 .partner-icon {
-    width: 48px;
-    height: 48px;
+    font-size: 32px;
     display: block;
     filter: drop-shadow(0 0 10px rgba(212, 255, 0, 0.3));
-    transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.partner-icon:hover {
-    filter: drop-shadow(0 0 20px rgba(212, 255, 0, 0.5));
-    transform: scale(1.1);
 }
 
 .partner-title {
@@ -415,7 +325,6 @@ body {
     gap: 30px;
 }
 
-/* Специальные стили для кейсов Администрации */
 .partner-block-admin {
     position: relative;
 }
@@ -424,10 +333,6 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-}
-
-.cases-grid-admin .case-card {
-    grid-column: span 1;
 }
 
 .cases-grid-admin .case-card.accordion-active {
@@ -474,42 +379,6 @@ body {
     transform: translateY(-5px);
 }
 
-.case-badge {
-    display: inline-block;
-    padding: 8px 16px;
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-}
-
-.case-badge::before {
-    content: '{';
-    color: var(--accent-color);
-    margin-right: 5px;
-    font-weight: 900;
-}
-
-.case-badge::after {
-    content: '}';
-    color: var(--accent-color);
-    margin-left: 5px;
-    font-weight: 900;
-}
-
-.badge-inprogress {
-    background: var(--pink-accent);
-    color: var(--text-white);
-    border: 2px solid var(--pink-accent);
-}
-
-.badge-inprogress::before,
-.badge-inprogress::after {
-    color: var(--accent-color);
-}
-
 .case-number {
     position: absolute;
     top: 30px;
@@ -521,17 +390,9 @@ body {
 }
 
 .case-icon {
-    width: 56px;
-    height: 56px;
+    font-size: 48px;
     margin-bottom: 20px;
     display: block;
-    filter: drop-shadow(0 0 15px rgba(255, 0, 128, 0.3));
-    transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.case-card:hover .case-icon {
-    filter: drop-shadow(0 0 25px rgba(255, 0, 128, 0.5));
-    transform: scale(1.05);
 }
 
 .case-title {
@@ -578,16 +439,9 @@ body {
 }
 
 .feature {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     font-size: 14px;
     color: var(--text-gray);
     font-weight: 500;
-}
-
-.feature-icon {
-    font-size: 20px;
 }
 
 /* Аккордеон */
@@ -605,14 +459,12 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    position: relative;
     overflow: hidden;
 }
 
 .accordion-toggle:hover {
     background: var(--primary-bg);
     color: var(--accent-color);
-    border: 3px solid var(--accent-color);
     transform: scale(1.05);
     box-shadow: 0 0 40px rgba(212, 255, 0, 0.5);
 }
@@ -740,12 +592,10 @@ body {
 }
 
 .partner-icon-large {
-    width: 72px;
-    height: 72px;
+    font-size: 72px;
     margin: 0 auto 25px;
     display: block;
     filter: drop-shadow(0 0 20px rgba(212, 255, 0, 0.3));
-    transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .partner-card:hover .partner-icon-large {
@@ -794,8 +644,6 @@ body {
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--text-white);
-    position: relative;
 }
 
 .footer-info h3::before {
@@ -878,7 +726,6 @@ body {
     }
 }
 
-/* Плавное появление секций */
 .section-title {
     animation: fadeInScale 0.8s ease-out both;
 }
@@ -894,25 +741,47 @@ body {
     }
 }
 
-/* Декоративные элементы в стиле tatarsan.ru */
-.decorative-bracket {
-    color: var(--accent-color);
-    font-weight: 900;
-    font-size: 1.2em;
+/* Производительность */
+.case-card,
+.partner-card,
+.btn,
+.accordion-toggle,
+.nav-link {
+    will-change: transform;
 }
 
-.decorative-slash {
-    color: var(--accent-color);
-    margin: 0 10px;
-    font-weight: 700;
+body {
+    animation: pageLoad 0.5s ease-out;
 }
 
-/* Специальные акценты для заголовков */
-.accent-text {
-    color: var(--accent-color);
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Скроллбар */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+    border-left: 1px solid var(--border-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--accent-color) 0%, var(--pink-accent) 100%);
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #E0FF33 0%, #FF0080 100%);
+    box-shadow: 0 0 10px rgba(212, 255, 0, 0.5);
 }
 
 /* Адаптивность */
@@ -928,33 +797,9 @@ body {
     .cases-grid-admin {
         grid-template-columns: 1fr;
     }
-
-    .cases-grid-admin .case-card {
-        grid-column: span 1;
-    }
-
-    .cases-grid-admin .case-card.accordion-active {
-        grid-column: span 1;
-    }
-
-    /* Уменьшаем декоративные блоки на планшетах */
-    .hero-decorative-blocks .pink-block-svg {
-        max-width: 300px;
-    }
-
-    .hero-decorative-blocks .gray-block-svg {
-        max-width: 250px;
-    }
-
 }
 
 @media (max-width: 768px) {
-    .ai-robot-icon {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 20px;
-    }
-
     .hero-title {
         font-size: 48px;
     }
@@ -971,14 +816,10 @@ body {
         font-size: 48px;
     }
 
-    .stat-number::before {
-        font-size: 28px;
-        left: -20px;
-    }
-    
+    .stat-number::before,
     .stat-number::after {
         font-size: 28px;
-        right: -20px;
+        left: -20px;
     }
 
     .logo::before,
@@ -1042,13 +883,6 @@ body {
         font-size: 13px;
     }
 
-    /* Скрываем декоративные блоки на мобильных */
-    .hero-decorative-blocks .pink-block-svg,
-    .hero-decorative-blocks .gray-block-svg {
-        display: none;
-    }
-
-/* Убираем clip-path на малых экранах для лучшей читаемости */
     .case-card {
         clip-path: none;
         border-radius: 8px;
@@ -1059,20 +893,12 @@ body {
         border-radius: 8px;
     }
 
-    /* Убираем подчеркивание под навигацией */
     .nav-link::after {
         display: none;
     }
 }
 
 @media (max-width: 480px) {
-    .ai-robot-icon {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 15px;
-        animation: none;
-    }
-
     .hero {
         padding: 80px 0 60px;
     }
@@ -1147,67 +973,10 @@ body {
         font-size: 14px;
     }
 
-.hero-decorative-blocks .pink-block-svg,
-    .hero-decorative-blocks .gray-block-svg {
-        animation: none;
-    }
-    
-    /* Отключаем SVG анимации */
-    .hero-decorative-blocks svg * {
-        animation: none !important;
-    }
-
-    /* Убираем тени для лучшей производительности */
     .btn-primary:hover,
-    .btn-outline:hover,
     .case-card:hover,
     .partner-card:hover,
     .accordion-toggle:hover {
         box-shadow: none;
-    }
-}
-
-/* Скроллбар */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--primary-bg);
-    border-left: 1px solid var(--border-color);
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--accent-color) 0%, var(--pink-accent) 100%);
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #E0FF33 0%, #FF0080 100%);
-    box-shadow: 0 0 10px rgba(212, 255, 0, 0.5);
-}
-
-/* Улучшение производительности для анимаций */
-.case-card,
-.partner-card,
-.btn,
-.accordion-toggle,
-.nav-link,
-.hero-decorative-blocks {
-    will-change: transform;
-}
-
-/* Плавное появление контента при загрузке */
-body {
-    animation: pageLoad 0.5s ease-out;
-}
-
-@keyframes pageLoad {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
     }
 }
